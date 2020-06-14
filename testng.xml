@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/Docs/Java/E2ESeleniumProject">
+        <classes>
+            <class name="academy.HomePageTestCase1"/>
+            <class name="academy.HomePageTestCase2"/>
+        </classes>
+    </test>
+</suite>
