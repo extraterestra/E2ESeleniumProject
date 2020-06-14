@@ -28,7 +28,7 @@ public class HomePage extends Base {
     public Object[][] getData(){
         Object[][] data = new Object [1][2];
 
-
+        //comment
         return data;
     }
 
