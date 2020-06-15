@@ -34,7 +34,10 @@ public class HomePageTestCase2 extends Base {
         loginPage.getPassword().sendKeys("Svetlica7");
         loginPage.getLogin().click();
         //Some assertion here
-        Assert.assertTrue(true);
+        Assert.assertEquals(1,2);
+        Assert.assertTrue(false );
+        System.out.println("result");
+        log.error("Assertion is NOT successful");
         log.info("Assertion is successful");
     }
 
