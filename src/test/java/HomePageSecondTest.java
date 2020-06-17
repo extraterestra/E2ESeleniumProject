@@ -1,17 +1,16 @@
-package academy;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import pageObjects.LandingPage;
 import pageObjects.LoginPage;
 import resources.Base;
 
 import java.io.IOException;
 
-public class HomePageTestCase1 extends Base {
-
+public class HomePageSecondTest extends Base {
     public static Logger log = LogManager.getLogger(Base.class.getName());
 
     @BeforeClass()
@@ -33,7 +32,10 @@ public class HomePageTestCase1 extends Base {
         loginPage.getPassword().sendKeys("Svetlica7");
         loginPage.getLogin().click();
         //Some assertion here
-        Assert.assertTrue(true);
+        Assert.assertEquals(1,2);
+        Assert.assertTrue(false );
+        System.out.println("result");
+        log.error("Assertion is NOT successful");
         log.info("Assertion is successful");
     }
 
@@ -47,6 +49,5 @@ public class HomePageTestCase1 extends Base {
     public void teardown() throws IOException {
         driver.close();
     }
-
 
 }
