@@ -26,16 +26,19 @@ public class Base {
         //IE
 
         prop = new Properties();
-        FileInputStream fis = new FileInputStream("D:\\Docs\\Java\\E2ESeleniumProject\\src\\main\\java\\resources\\data.properties");
+        //System.getProperty("user.dir")
+        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\resources\\data.properties");
+        //"D:\\Docs\\Java\\E2ESeleniumProject\\src\\main\\java\\resources\\data.properties"
 
         prop.load(fis);
-        String browserName = prop.getProperty("browser");
-        System.out.println(browserName);
+        //mvn test -Dbrowser=chrome
+//        String browserName = prop.getProperty("browser");
+        String browserName = System.getProperty("browser");
+                System.out.println(browserName);
         if (browserName.equals("chrome"))
         {
-            System.setProperty("webdriver.chrome.driver", "C:\\dev\\selenium\\chromedriver_win32\\chromedriver.exe");
-            //"C://dev//selenium//chromedriver_win32//chromedriver.exe"
-
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
+                    + "\\src\\main\\java\\resources\\webdrivers\\chromedriver\\chromedriver.exe");
             driver = new ChromeDriver();
 
         }

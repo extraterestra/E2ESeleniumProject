@@ -10,9 +10,9 @@
             <class name="HomePageFirstTest"/>
         </classes>
     </test>
-    <test name="Test 2">
-        <classes>
-            <class name="HomePageSecondTest"/>
-        </classes>
-    </test>
+<!--    <test name="Test 2">-->
+<!--        <classes>-->
+<!--            <class name="HomePageSecondTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

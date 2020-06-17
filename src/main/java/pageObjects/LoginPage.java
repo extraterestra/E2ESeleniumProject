@@ -15,10 +15,10 @@ public class LoginPage {
     }
 
     @FindBy(xpath = ".//div[@class='control-input']//input[@class='form-control input-hg']")
-    WebElement email;
+    private WebElement email;
 
     @FindBy(xpath = ".//div[@class='control-input']//input[@type='password']")
-    WebElement password;
+    private WebElement password;
 
     @FindBy(xpath = ".//div[@class='form-group text-center']//input[@type='submit']")
     WebElement login;
