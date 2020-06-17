@@ -5,6 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,21 +29,27 @@ public class Base {
         prop = new Properties();
         //System.getProperty("user.dir")
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\resources\\data.properties");
-        //"D:\\Docs\\Java\\E2ESeleniumProject\\src\\main\\java\\resources\\data.properties"
 
         prop.load(fis);
-        //mvn test -Dbrowser=chrome
-//        String browserName = prop.getProperty("browser");
         String browserName = System.getProperty("browser");
                 System.out.println(browserName);
-        if (browserName.equals("chrome"))
+        if (browserName.contains("chrome"))
         {
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
                     + "\\src\\main\\java\\resources\\webdrivers\\chromedriver\\chromedriver.exe");
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            if (browserName.contains("headless")) {
+                options.addArguments("headless");
+            }
+            driver = new ChromeDriver(options);
+        }
+
+        else if (browserName.equals("IE"))
+        {
 
         }
-        else if (browserName.equals("chrome"))
+
+        else if (browserName.equals("firefox"))
         {
 
         }
